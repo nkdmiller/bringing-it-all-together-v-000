@@ -74,6 +74,7 @@ class Dog
         FROM dogs
         WHERE name = ? breed = ?
       SQL
+      binding.pry
       search = DB[:conn].execute(sql, hash[:name] , hash[:breed])
       if search.empty?
         dog = Dog.new(hash)
